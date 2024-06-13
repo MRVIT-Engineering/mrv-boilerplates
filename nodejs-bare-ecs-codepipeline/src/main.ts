@@ -1,11 +1,7 @@
-import express from 'express';
+import { server } from './router';
 
-const app = express();
+const PORT = 5001;
 
-app.get('/', (_req, res) => {
-  res.send('Instance is healty!');
-});
-
-app.listen(3000, () => {
-  console.log('App started');
+server.listen(PORT, () => {
+  console.log('Server started listening on PORT ', PORT);
 });
