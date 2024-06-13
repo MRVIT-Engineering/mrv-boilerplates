@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /sns/sns-api
+permissions:
+  - object: /sns/sns-api
+    owner: ec2-user
+    group: ec2-user
+hooks:
+  ApplicationStart:
+    - location: scripts/restart_app.sh
+      timeout: 60
+      runas: ec2-user

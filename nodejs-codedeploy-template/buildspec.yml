@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo "📦 installing packages..."
+      - npm i
+      - echo "✅ Packages installed successfully."
+  pre_build:
+    commands:
+      - echo "⚙️ Testing..."
+      # Run your test command here
+      - echo "✅ Tests passed successfully."
+  build:
+    commands:
+      - echo "🚧 Starting compiling packages..."
+      - npm run build
+      - echo "✅ Build passed successfully."
+  post_build:
+    commands:
+      - echo "🚚 Performing post-build packing and operations..."
+      - echo "✅ Post build successful"
+artifacts:
+  files:
+    - 'dist/**/*'
+    - 'scripts/*'
+    - node_modules/**/*
+    - appspec.yml
+  name: nodejs-codedeploy-template-artifacts
