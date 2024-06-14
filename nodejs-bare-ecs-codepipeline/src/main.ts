@@ -1,7 +1,9 @@
-import { server } from './router';
+import Router from './router/Router';
 
 const PORT = 5001;
 
-server.listen(PORT, () => {
-  console.log('Server started listening on PORT ', PORT);
-});
+const router = new Router();
+
+// server.listen(PORT, () => {
+//   console.log('Server started listening on PORT ', PORT);
+// });
