@@ -48,4 +48,4 @@ class Router {
   }
 }
 
-export default Router;
+export const router = new Router();

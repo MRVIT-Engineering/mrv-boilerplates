@@ -1,9 +1,18 @@
-import Router from './router/Router';
+import * as http from 'http';
+
+import { router } from './router/Router';
 
 const PORT = 5001;
 
-const router = new Router();
+router.get('/', (_, res) => {
+  res.writeHead(200, { 'Content-Type': 'application/json' });
+  res.end(JSON.stringify({ message: 'Hello' }));
+});
 
-// server.listen(PORT, () => {
-//   console.log('Server started listening on PORT ', PORT);
-// });
+const server = http.createServer((req, res) => {
+  router.handle(req, res);
+});
+
+server.listen(PORT, () => {
+  console.log('Server started listening on PORT: ', PORT);
+});
