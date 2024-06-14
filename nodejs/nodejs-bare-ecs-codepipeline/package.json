@@ -15,7 +15,7 @@
   "scripts": {
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
-    "dev": "npx nodemon",
+    "dev": "tsc -p tsconfig.json && nodemon ./dist/main.js",
     "clean": "rm -rf dist build package",
     "docs": "typedoc --entryPoints src/main.ts",
     "build": "tsc -p tsconfig.json",
