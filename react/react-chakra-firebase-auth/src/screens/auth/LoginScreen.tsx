@@ -10,21 +10,24 @@ import {
   Text,
   useToast,
 } from '@chakra-ui/react';
+import { useAuth } from '../../hooks/useAuth';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const toast = useToast();
+  const { signIn } = useAuth();
 
   const handleLogin = () => {
-    // Add your login logic here
-    toast({
-      title: 'Login attempted.',
-      description: `Email: ${email}, Password: ${password}`,
-      status: 'info',
-      duration: 5000,
-      isClosable: true,
-    });
+    if (!email || !password)
+      return toast({
+        title: 'Please fill in your credentials',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+
+    signIn(email, password);
   };
 
   return (
