@@ -1,3 +1,6 @@
 export const Routes = {
-  Home: '',
+  Home: '/',
+  Login: '/auth/login',
+  Dashboard: '/dashboard',
+  DashboardHome: '/dashboard/home',
 };
