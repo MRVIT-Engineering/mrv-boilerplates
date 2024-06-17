@@ -5,6 +5,8 @@ This repository contains multiple project boilerplates. Below is a list of the a
 ## Available Boilerplates
 
 - [NodeJS Express TS - AWS EC2 Deployments with CodePipeline](./nodejs-codedeploy-template/README.md)
+- [React TS ChakraUI MobX Firebase Auth](./react/react-chakra-firebase-auth/README.md)
+
 
 ## Usage
 
